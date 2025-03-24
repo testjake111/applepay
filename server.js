@@ -5,7 +5,6 @@ import * as paypal from "./paypal-api.js";
 const { PORT = 8888 } = process.env;
 
 const app = express();
-const __dirname = path.dirname(__filename);
 
 
 app.set("view engine", "ejs");
@@ -13,8 +12,6 @@ app.use(express.static("public"));
 app.get('/.well-known/apple-developer-merchantid-domain-association', (req, res) => {
   // res.setHeader('Content-Type', 'text/plain'); // Ensures the file displays as text
   res.set("Content-Disposition", "inline");
-
-  res.sendFile(path.join(__dirname, '.well-known/apple-developer-merchantid-domain-association'));
 });
 
 // render checkout page with client id & unique client token
