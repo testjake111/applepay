@@ -6,7 +6,7 @@ const { PORT = 8888 } = process.env;
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
+app.use('/.well-known', express.static('.well-known'));
 
 
 // render checkout page with client id & unique client token
