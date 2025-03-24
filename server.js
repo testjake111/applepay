@@ -10,6 +10,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.get('/.well-known/apple-developer-merchantid-domain-association', (req, res) => {
   res.setHeader('Content-Type', 'text/plain'); // Ensures the file displays as text
+  res.set("Content-Disposition", "inline");
+
   res.sendFile(path.join(__dirname, '.well-known/apple-developer-merchantid-domain-association'));
 });
 
