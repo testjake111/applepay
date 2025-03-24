@@ -2,7 +2,7 @@ import "dotenv/config";
 import express from "express";
 import * as paypal from "./paypal-api.js";
 const { PORT = 8888 } = process.env;
-const path = require('path');
+const path = path();
 
 const app = express();
 app.set("view engine", "ejs");
