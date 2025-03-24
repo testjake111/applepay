@@ -5,6 +5,8 @@ import * as paypal from "./paypal-api.js";
 const { PORT = 8888 } = process.env;
 
 const app = express();
+const __dirname = path.dirname(__filename);
+
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
